@@ -1,0 +1,8 @@
+{
+  "name": "IgniteSTEM Web App",
+  "description": "The IgniteSTEM web app",
+  "repository": "https://github.com/IgniteSTEM/IgniteSTEM-Web-App",
+  "logo": "http://khou22.github.io/media/site/logo/initials_logo.png",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
