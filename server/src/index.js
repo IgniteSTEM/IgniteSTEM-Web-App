@@ -5,5 +5,5 @@ const port = parseInt(process.env.PORT, 10) || 5555;
 app.set('port', port);
 
 // 0.0.0.0 makes it available on your local network
-app.listen(port, '0.0.0.0');
-// app.listen(port);
+// app.listen(port, '0.0.0.0');
+app.listen(port);

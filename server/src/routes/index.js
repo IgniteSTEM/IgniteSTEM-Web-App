@@ -26,8 +26,8 @@ export default (app) => {
     });
 
     // Client app entry index.html file - react router
-    // app.get('*', (req, res) => {
-    //     const __dirname = process.env.PWD;
-    //     res.sendFile('index.html', { root: path.join(__dirname, './client/dist') }); // Render client
-    // });
+    app.get('*', (req, res) => {
+        const __dirname = process.env.PWD;
+        res.sendFile('index.html', { root: path.join(__dirname, './client/dist') }); // Render client
+    });
 };

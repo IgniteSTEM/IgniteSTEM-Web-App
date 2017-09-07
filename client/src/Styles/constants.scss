@@ -1,0 +1,27 @@
+// Only includes constant values to be used later on
+
+// Colors
+$brand-blue: #3286A8;
+$brand-red: #D5491F;
+$brand-orange: #DA8D0F;
+$brand-green: #80A454;
+$brand-grey: #9DB7C1;
+
+// Width of the content area
+$content-width:    900px;
+
+// Media Queries
+$on-palm:          600px;
+$on-laptop:        800px;
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//          ...
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
