@@ -1,6 +1,6 @@
-const express = require('express');
 import routes from './routes';
 
+const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const sessionAuth = require('./config/session');
@@ -11,15 +11,18 @@ const __dirname = process.env.PWD; // Could break on prod
 const app = express(); // Setup express app
 
 // Allow cross origin requests with authorization (for API purposes)
-app.all('*', (req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.all('*', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token, AUTHORIZATION');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token, AUTHORIZATION'
+    );
+
     // Intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
+    if (req.method === 'OPTIONS') {
         res.send(200);
-    }
-    else {
+    } else {
         next();
     }
 });

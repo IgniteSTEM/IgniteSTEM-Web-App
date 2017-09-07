@@ -16,16 +16,29 @@ module.exports = {
     },
     externals: [nodeExternals()],
     module: {
-        rules: [{
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['airbnb']
+        rules: [
+            { // Linting
+                enforce: 'pre',
+                test: /\.js?$/,
+                loader: 'eslint-loader',
+                options: {
+                    failOnWarning: false,
+                    failOnError: false,
+                    emitWarning: true
+                },
+                exclude: /node_modules/
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['airbnb']
+                    }
+                }
             }
-          }
-        }]
+        ]
     },
     resolve: {
         modules: [

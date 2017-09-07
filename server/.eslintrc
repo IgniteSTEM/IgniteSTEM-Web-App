@@ -1,0 +1,30 @@
+{
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "no-return-assign": "off",
+        "no-underscore-dangle": "off",
+        "no-nested-ternary": "off",
+        "no-useless-escape": "off",
+        "comma-dangle": [2, "always-multiline"],
+        "no-prototype-builtins": "off",
+        "no-param-reassign": "off", // disabled mostly because off reduce function
+        "max-len": ["warn", { "code": 150 } ],
+        "indent": [2, 4, { "SwitchCase": 1 }],
+        "camelcase": [0],
+        "no-alert": [0],
+    },
+    "globals": { // It won't be upset if it sees any of these
+        "document": true,
+    },
+    env: {
+    }
+}
