@@ -22,7 +22,10 @@
     "express": "^4.15.4",
     "heroku-logger": "^0.1.4",
     "morgan": "^1.8.1",
-    "request": "^2.81.0"
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.81.0",
+    "sequelize": "^4.13.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

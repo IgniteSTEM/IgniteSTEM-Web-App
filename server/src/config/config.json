@@ -1,0 +1,21 @@
+{
+  "development": {
+    "username": "kevinhou",
+    "password": null,
+    "database": "ignite-stem-dev",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "kevinhou",
+    "password": null,
+    "database": "ignite-stem-test",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}
