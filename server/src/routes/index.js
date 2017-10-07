@@ -6,12 +6,14 @@ import * as path from 'path';
 // Make modular so not all routes are here
 import apiRoutes from './apiRoutes'; // Test
 import userRoutes from './userRoutes';
+import loginRoutes from './loginRoutes';
 
 // Requires an app as an input so can direct the user accordingly
 export default (app) => {
     /* ********************  Routes  ******************** */
     apiRoutes(app);
     userRoutes(app);
+    loginRoutes(app);
 
     /* ********************  Client  ******************** */
 

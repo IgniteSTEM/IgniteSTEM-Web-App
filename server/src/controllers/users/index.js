@@ -3,7 +3,12 @@ const User = require('../../models').User;
 export const list = (req, res) => {
     return User
         .findAll({}) // Get all quotes
-        .then((quotes) => res.status(200).send(quotes)) // Return array of quotes
+        .then((users) => {
+            // Filter out password attributes
+            users.forEach((user) => { delete user.dataValues.password });
+            console.log(users);
+            res.status(200).send(users);
+        }) // Return array of quotes
         .catch((error: Error) => res.status(400).send(error)); // Error
 };
 
@@ -25,9 +30,9 @@ export const createUser = (req, res) => {
             last_name: last_name,
             organization: organization,
         })
-        .then((User: User) => { // Success: created new quote entry
-            delete User.password; // Remove password
-            res.status(200).send(User);
+        .then((user) => { // Success: created new quote entry
+            delete user.dataValues.password; // Remove password
+            res.status(200).send(user);
         })
         .catch((error: Error) => {
             console.log(error);

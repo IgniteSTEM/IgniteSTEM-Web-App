@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'; // For prop validation
 // Components
 import Home from '../Components/home/index.jsx';
 import Profile from '../Components/profile/index.jsx';
+import Login from '../Containers/LoginContainer';
 
 // Navigation bar
 import NavBar from '../Components/partials/header.jsx';
@@ -19,6 +20,7 @@ class MainRouter extends Component {
                 <NavBar history={history} />
                 <Route exact path="/" component={Home} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/login" component={Login} />
             </div>
         );
     };

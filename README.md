@@ -11,3 +11,9 @@ Hosting: Heroku, HerokuPG
 # To Do
 * Postgres database
 * Design UI/UX
+
+# Notes
+Must specify `--app` when performing Heroku CLI commands if you have multiple Heroku apps on your machine.
+```
+$ heroku pg:info --app ignite-stem
+```
