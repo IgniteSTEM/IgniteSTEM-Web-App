@@ -18,11 +18,19 @@ import FullscreenLoading from '../Components/loading/fullscreen-loading.jsx';
 class MainRouter extends Component {
 
     // Only matters if the user is logged in
-    checkLogin(component) {
+    ifLoggedIn(component) {
         if (this.props.loggedIn) return component;
 
         this.props.history.push('/login');
         return <Login />;
+    }
+
+    // Only show screen if not logged in
+    ifLoggedOut(component) {
+        if (this.props.loggedOut) return component;
+
+        this.props.history.push('/'); // Go to homepage
+        return <Home />;
     }
 
     render() {
@@ -39,8 +47,8 @@ class MainRouter extends Component {
             <div>
                 <NavBar history={history} loggedIn={loggedIn} user={currentUser} />
                 <Route exact path="/" component={Home} />
-                <Route path="/profile" render={() => this.checkLogin(<Profile />)} />
-                <Route path="/login" component={Login} />
+                <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
+                <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
             </div>
         );
     };
