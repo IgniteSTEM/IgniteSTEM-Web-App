@@ -9,7 +9,9 @@ import RouterComponent from '../router/index.jsx';
 
 // Map the redux states to props
 const mapStateToProps = (state) => ({
-    test: state.main.test,
+    fetchingUser: state.main.fetchingUser,
+    loggedIn: state.main.loggedIn,
+    currentUser: state.main.currentUser,
 });
 
 // Map actions to props

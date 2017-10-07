@@ -1,0 +1,15 @@
+.fullscreen-loading {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    // Child item alignment
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -15,7 +15,7 @@ import Routes from './Containers/MainContainer';
 import configureStore from './ConfigureStore';
 
 // Actions to call on entry
-// ...
+import { fetchLoginStatus } from './Actions/MainActions.js';
 
 // Import main styling
 import './Styles/constants.scss';
@@ -30,7 +30,7 @@ const history = createHistory();
 const store = configureStore(history);
 
 // Immediate actions
-// ...
+store.dispatch(fetchLoginStatus());
 
 render(
     <Provider store={store}>

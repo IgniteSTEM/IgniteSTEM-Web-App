@@ -26,11 +26,17 @@ const notLoggedIn = () => ({
 
 export const fetchLoginStatus = () => {
     const url = '/api/users/current';
+    console.log("Fetching");
 
     // Returning a promise allows you to use the 'dispatch' function in the child scope
     return (dispatch) => {
         // Return the contents of the fetch promise
         return fetch(url, { // See watwg-fetch for docs
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                "Content-Type": "application/json"
+            },
             credentials: 'same-origin', // If same origin
         }).then(response => response.json()) // Parse response
         .then(json => {

@@ -24,7 +24,7 @@ const configureStore = (browserHistory) => {
     // This is exported and used by the provider
     return createStore(combineReducers({ // Combine with router reducer
         ...mainReducers,
-        routing: routerReducer
+        routing: routerReducer,
     }), applyMiddleware(...middlewares));
 }
 
