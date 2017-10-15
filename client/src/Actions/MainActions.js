@@ -26,7 +26,6 @@ const notLoggedIn = () => ({
 
 export const fetchLoginStatus = () => {
     const url = '/api/users/current';
-    console.log("Fetching");
 
     // Returning a promise allows you to use the 'dispatch' function in the child scope
     return (dispatch) => {
@@ -40,8 +39,8 @@ export const fetchLoginStatus = () => {
             credentials: 'same-origin', // If same origin
         }).then(response => response.json()) // Parse response
         .then(json => {
-            console.log('Received current user:', json);
             if (json.logged_in) {
+                console.log('Signed in with current user:', json);
                 dispatch(loggedIn(json.user)); // User logged in
             } else {
                 dispatch(notLoggedIn()); // User not logged in

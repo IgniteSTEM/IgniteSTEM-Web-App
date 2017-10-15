@@ -27,7 +27,7 @@ class MainRouter extends Component {
 
     // Only show screen if not logged in
     ifLoggedOut(component) {
-        if (this.props.loggedOut) return component;
+        if (!this.props.loggedIn) return component;
 
         this.props.history.push('/'); // Go to homepage
         return <Home />;

@@ -24,6 +24,7 @@
     "morgan": "^1.8.1",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
+    "prop-types": "^15.6.0",
     "request": "^2.81.0",
     "sequelize": "^4.13.2"
   },
