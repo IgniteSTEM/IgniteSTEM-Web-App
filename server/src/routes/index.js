@@ -4,9 +4,10 @@ import * as path from 'path';
 // ...
 
 // Make modular so not all routes are here
-import apiRoutes from './apiRoutes'; // Test
+import apiRoutes from './apiRoutes';
 import userRoutes from './userRoutes';
 import loginRoutes from './loginRoutes';
+import dayOfRoutes from './dayOfRoutes';
 
 // Requires an app as an input so can direct the user accordingly
 export default (app) => {
@@ -14,6 +15,7 @@ export default (app) => {
     apiRoutes(app);
     userRoutes(app);
     loginRoutes(app);
+    dayOfRoutes(app);
 
     /* ********************  Client  ******************** */
 
