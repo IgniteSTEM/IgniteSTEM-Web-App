@@ -5,7 +5,8 @@ import { BrowserRouter as Switch } from 'react-router-dom';
 import PropTypes from 'prop-types'; // For prop validation
 
 // Components
-import Home from '../Components/home/index.jsx';
+import Home from '../Components/home/index.jsx'; // Aka the Directory
+import About from '../Components/about/index.jsx'; // About page
 import Profile from '../Components/profile/index.jsx';
 import Login from '../Containers/LoginContainer';
 
@@ -63,6 +64,7 @@ class MainRouter extends Component {
                     />
                     <div className="main-content">
                         <Route exact path="/" component={Home} />
+                        <Route path="/about" component={About} />
                         <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
                         <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
                     </div>

@@ -1,9 +1,10 @@
 $linkColor: #2D2D2D;
 $selectedColor: #A5A5A5;
+$sidebarWidth: 250px;
 
 .sidebar {
     position: fixed;
-    width: 300px;
+    width: $sidebarWidth;
     padding: 16px;
     box-sizing: border-box;
 

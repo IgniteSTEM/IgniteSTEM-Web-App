@@ -22,10 +22,15 @@ a {
     color: $linkColor;
 }
 
+// Main content area
+$sidebarWidth: 250px;
 .main {
     &-content {
         // Left side devoted to sidebar
-        width: calc(100% - 300px);
+        width: calc(100% - #{$sidebarWidth});
         float: right;
+
+        padding: 24px;
+        box-sizing: border-box;
     }
 }
