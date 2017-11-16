@@ -1,0 +1,22 @@
+$linkColor: #2D2D2D;
+$selectedColor: #A5A5A5;
+
+.sidebar {
+    position: fixed;
+    width: 300px;
+    padding: 16px;
+    box-sizing: border-box;
+
+    &-links {
+        color: $linkColor;
+
+        // Spacing between sidebar link items
+        li {
+            line-height: 28px;
+        }
+
+        &-selected {
+            color: $selectedColor;
+        }
+    }
+}

@@ -1,9 +1,9 @@
-// Roboto Font from Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+// Work Sands from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500');
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif; // Set master font for app
+    font-family: 'Work Sans', sans-serif; // Set master font for app
 }
 
 // Default stylesheet: https://www.w3.org/TR/CSS2/sample.html
@@ -14,3 +14,18 @@ h5              { font-size: .83em; margin: 1.5em 0 }
 h6              { font-size: .75em; margin: 1.67em 0 }
 h1, h2, h3, h4,
 h5, h6          { font-weight: bolder }
+
+// Link styling
+$linkColor: #2D2D2D;
+a {
+    text-decoration: none;
+    color: $linkColor;
+}
+
+.main {
+    &-content {
+        // Left side devoted to sidebar
+        width: calc(100% - 300px);
+        float: right;
+    }
+}

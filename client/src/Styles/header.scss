@@ -1,5 +1,10 @@
 .header {
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+
+    // Content styling
+    text-align: center;
+
+    // Add padding
+    padding: 24px;
+    box-sizing: border-box;
 }

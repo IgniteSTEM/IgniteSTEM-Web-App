@@ -5,28 +5,22 @@ import { Link, browserHistory } from 'react-router-dom';
 // Style sheet
 import '../../Styles/header.scss';
 
-class NavBar extends Component {
+class Header extends Component {
     render() {
         const {
-            loggedIn,
-            user,
+            subheader,
         } = this.props;
         return (
             <div className="header">
-                <Link to={'/'}>Home</Link>
-                { loggedIn ?
-                    <Link to={'/profile'}>Welcome, {user.first_name}</Link>
-                :
-                        <Link to={'/login'}>Login</Link>
-                }
+                <h2>IGNITESTEM</h2>
+                <p>{subheader}</p>
             </div>
         );
     }
 };
 
-NavBar.propTypes = {
-    loggedIn: PropTypes.bool.isRequired,
-    user: PropTypes.object.isRequired,
+Header.propTypes = {
+    subheader: PropTypes.string.isRequired,
 };
 
-export default NavBar;
+export default Header;
