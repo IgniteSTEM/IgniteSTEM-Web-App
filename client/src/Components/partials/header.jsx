@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link, browserHistory } from 'react-router-dom';
 
+// Frontend rendering actions
+import { getSubheader } from '../../Actions/FrontendActions.js';
+
 // Style sheet
 import '../../Styles/header.scss';
 
 class Header extends Component {
     render() {
         const {
-            subheader,
+            location,
         } = this.props;
+
+        const subheader = getSubheader(location.pathname);
         return (
             <div className="header">
                 <h2>IGNITESTEM</h2>
@@ -20,7 +25,12 @@ class Header extends Component {
 };
 
 Header.propTypes = {
-    subheader: PropTypes.string.isRequired,
+    // Redux/Router window location data
+    location: PropTypes.shape({
+        hash: PropTypes.string.isRequired,
+        pathname: PropTypes.string.isRequired,
+        search: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default Header;

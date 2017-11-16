@@ -8,7 +8,6 @@ import '../../Styles/sidebar.scss';
 class Sidebar extends Component {
     // If active page, custom class
     currentPageClass(path) {
-        console.log(this.props.location);
         const currentPath = this.props.location.pathname;
         if (path === currentPath) {
             return 'sidebar-links-selected';
@@ -21,7 +20,6 @@ class Sidebar extends Component {
             loggedIn,
             user,
         } = this.props;
-        console.log(this.props);
         return (
             <div className="sidebar">
                 <ul className="sidebar-links">

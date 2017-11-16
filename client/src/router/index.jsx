@@ -50,7 +50,6 @@ class MainRouter extends Component {
             <div>
                 <Header
                     location={location}
-                    subheader="Hello, World."
                 />
                 <div>
                     <Sidebar
