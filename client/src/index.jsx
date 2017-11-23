@@ -21,6 +21,7 @@ import { fetchLoginStatus } from './Actions/MainActions.js';
 import './Styles/constants.scss';
 import './Styles/reset.scss'; // Normalize CSS
 import './Styles/main.scss'; // Apply general styling
+import './Styles/inputs.scss'; // Input style guide
 
 // 'react-router-redux': Add the reducer to your store on the `routing` key
 

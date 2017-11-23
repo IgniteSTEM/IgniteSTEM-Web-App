@@ -1,0 +1,18 @@
+.input {
+    &-text {
+        border: 1px solid #a5a5a5;
+        border-radius: 0;
+        background: none;
+        padding: .3em;
+        outline: none;
+        transition: all .4s;
+    }
+
+    &-button {
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 0;
+        padding: .3em .6em;
+    }
+}

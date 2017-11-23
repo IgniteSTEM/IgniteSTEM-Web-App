@@ -27,16 +27,16 @@ class Sidebar extends Component {
                         <Link className={this.currentPageClass('/')} to={'/'}>DIRECTORY</Link>
                     </li>
                     <li>
-                        <Link to={'/about'}>ABOUT</Link>
+                        <Link className={this.currentPageClass('/about')} to={'/about'}>ABOUT</Link>
                     </li>
                     <li>
-                        <Link to={'/join'}>JOIN</Link>
+                        <Link className={this.currentPageClass('/join')} to={'/join'}>JOIN</Link>
                     </li>
                     <li>
                         { loggedIn ?
-                            <Link to={'/profile'}>WELCOME, {user.first_name}</Link>
+                            <Link className={this.currentPageClass('/profile')} to={'/profile'}>WELCOME, {user.first_name}</Link>
                         :
-                                <Link to={'/login'}>LOGIN</Link>
+                                <Link className={this.currentPageClass('/login')} to={'/login'}>LOGIN</Link>
                         }
                     </li>
                 </ul>

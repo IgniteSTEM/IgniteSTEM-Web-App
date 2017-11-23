@@ -13,7 +13,7 @@ h3              { font-size: 1.17em; margin: .83em 0 }
 h5              { font-size: .83em; margin: 1.5em 0 }
 h6              { font-size: .75em; margin: 1.67em 0 }
 h1, h2, h3, h4,
-h5, h6          { font-weight: bolder }
+h5, h6          { font-weight: 500; letter-spacing: .2em }
 
 // Link styling
 $linkColor: #2D2D2D;
@@ -23,7 +23,7 @@ a {
 }
 
 // Main content area
-$sidebarWidth: 250px;
+$sidebarWidth: 200px;
 .main {
     &-content {
         // Left side devoted to sidebar

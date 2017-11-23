@@ -1,3 +1,8 @@
 .about {
-    
+    line-height: 150%;
+
+    // Paragraphs have spacing between them
+    p {
+        margin: 12px 0; // Margin on top and bottom
+    }
 }

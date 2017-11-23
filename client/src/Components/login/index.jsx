@@ -47,15 +47,27 @@ class LoginScreen extends Component {
         } = this.props;
         return (
             <div className="login">
-                <h3>Please Log In</h3>
-                { error !== '' ? (
-                    <p>{error}</p>
-                ) : null }
-                <form onSubmit={(event) => this.login(event)}>
-                    <input type="text" id="username" placeholder="Username" onChange={(event) => this.editField(event)} />
-                    <input type="password" id="password" placeholder="Password" onChange={(event) => this.editField(event)} />
-                    <input type="submit" />
-                </form>
+                <div className="login-left">
+                    <h3>Log In</h3>
+                    { error !== '' ? (
+                        <p>{error}</p>
+                    ) : null }
+                    <form onSubmit={(event) => this.login(event)}>
+                        <p>Username or Email</p>
+                        <input className="input-text" type="text" id="username" onChange={(event) => this.editField(event)} />
+                        <p>Password</p>
+                        <input className="input-text" type="password" id="password" onChange={(event) => this.editField(event)} />
+                        <br />
+                        <input className="input-button" type="submit" value="LOG IN" />
+                    </form>
+                </div>
+                <div className="login-right">
+                    <h3>Register</h3>
+                    <p>
+                        If you are a teacher, principal, or tech leader, create a username to become a part of a huge community of innovators in the classroom. Get connected today and find educators with a passion to bring and improve the STEM opportunities in their area.
+                    </p>
+                    <button className="input-button">REGISTER</button>
+                </div>
             </div>
         );
     }
