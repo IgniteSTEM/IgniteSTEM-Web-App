@@ -8,6 +8,7 @@ import apiRoutes from './apiRoutes';
 import userRoutes from './userRoutes';
 import loginRoutes from './loginRoutes';
 import dayOfRoutes from './dayOfRoutes';
+import mediaRoutes from './mediaRoutes';
 
 // Requires an app as an input so can direct the user accordingly
 export default (app) => {
@@ -16,6 +17,7 @@ export default (app) => {
     userRoutes(app);
     loginRoutes(app);
     dayOfRoutes(app);
+    mediaRoutes(app);
 
     /* ********************  Client  ******************** */
 
