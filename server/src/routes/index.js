@@ -9,6 +9,7 @@ import userRoutes from './userRoutes';
 import loginRoutes from './loginRoutes';
 import dayOfRoutes from './dayOfRoutes';
 import mediaRoutes from './mediaRoutes';
+import searchRoutes from './searchRoutes';
 
 // Requires an app as an input so can direct the user accordingly
 export default (app) => {
@@ -18,6 +19,7 @@ export default (app) => {
     loginRoutes(app);
     dayOfRoutes(app);
     mediaRoutes(app);
+    searchRoutes(app);
 
     /* ********************  Client  ******************** */
 
