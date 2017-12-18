@@ -41,6 +41,10 @@ class LoginScreen extends Component {
         }
     }
 
+    goToRegister(event) {
+        this.props.history.push('/register'); // Go to homepage
+    }
+
     render() {
         const {
             error,
@@ -66,7 +70,7 @@ class LoginScreen extends Component {
                     <p>
                         If you are a teacher, principal, or tech leader, create a username to become a part of a huge community of innovators in the classroom. Get connected today and find educators with a passion to bring and improve the STEM opportunities in their area.
                     </p>
-                    <button className="input-button">REGISTER</button>
+                    <button className="input-button" onClick={() => this.goToRegister()}>REGISTER</button>
                 </div>
             </div>
         );

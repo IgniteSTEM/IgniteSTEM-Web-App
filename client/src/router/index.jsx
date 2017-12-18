@@ -9,6 +9,7 @@ import Home from '../Components/home/index.jsx'; // Aka the Directory
 import About from '../Components/about/index.jsx'; // About page
 import Profile from '../Components/profile/index.jsx';
 import Login from '../Containers/LoginContainer';
+import Register from '../Containers/RegisterContainer';
 
 // Partials
 import Sidebar from '../Components/partials/sidebar.jsx';
@@ -66,6 +67,7 @@ class MainRouter extends Component {
                         <Route path="/about" component={About} />
                         <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
                         <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
+                        <Route path="/register" render={() => this.ifLoggedOut(<Register />)} />
                     </div>
                 </div>
             </div>
