@@ -1,26 +1,52 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// React-Select form element
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+
 // Import styles
 import '../../Styles/register.scss';
 
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             data: {
                 username: '',
                 email: '',
                 occupation: '',
                 school: '',
                 schoolType: '',
-                password: ''
+                password: '',
                 confirmPassword: '',
             }
         };
     }
 
+    editField(event) {
+        const newData = this.state.data;
+        const id = event.target.id;
+        const value = event.target.value;
+        newData[id] = value;
+        this.setState({
+            data: newData,
+        });
+    }
+
+    handleSchoolTypeChange(selection) {
+        const newData = this.state.data;
+        newData.schoolType = selection.value;
+        this.setState({ data: newData });
+    }
+
     render() {
+        const schoolTypes = [
+            { value: 'primary', label: 'Primary School' },
+            { value: 'elementary', label: 'Elementary School' },
+            { value: 'middle', label: 'Middle School' },
+            { value: 'high', label: 'High School' },
+        ];
         return (
             <div className="register">
                 <h3>Register For IgniteSTEM</h3>
@@ -58,11 +84,11 @@ class Register extends Component {
                     />
 
                     <p>Do you teach/lead a primary, elementary, middle, or high school?</p>
-                    <input
-                        className="input-text"
-                        type="text"
-                        id="schoolType"
-                        onChange={(event) => this.editField(event)}
+                    <Select
+                        name="schoolType"
+                        value={this.state.data.schoolType}
+                        onChange={(value) => this.handleSchoolTypeChange(value)}
+                        options={schoolTypes}
                     />
 
                     <p>Password</p>

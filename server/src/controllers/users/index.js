@@ -16,6 +16,7 @@ export const createUser = (req, res) => {
     console.log('Created user');
     const {
         username,
+        email,
         password,
         first_name,
         last_name,
@@ -24,11 +25,12 @@ export const createUser = (req, res) => {
 
     return User
         .create({
-            username: username,
-            password: password,
-            first_name: first_name,
-            last_name: last_name,
-            organization: organization,
+            username,
+            email,
+            password,
+            first_name,
+            last_name,
+            organization,
         })
         .then((user) => { // Success: created new quote entry
             delete user.dataValues.password; // Remove password
