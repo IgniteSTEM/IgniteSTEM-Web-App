@@ -40,6 +40,16 @@ class Register extends Component {
         this.setState({ data: newData });
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        const data = this.state.data;
+        Object.keys(data).forEach(key => {
+            if (data[key] == null) {
+                console.log(`${key} not filled out`);
+            }
+        });
+    }
+
     render() {
         const schoolTypes = [
             { value: 'primary', label: 'Primary School' },
@@ -50,7 +60,7 @@ class Register extends Component {
         return (
             <div className="register">
                 <h3>Register For IgniteSTEM</h3>
-                <form onSubmit={(event) => this.login(event)}>
+                <form onSubmit={(event) => this.handleSubmit(event)}>
                     <p>Username</p>
                     <input
                         className="input-text"

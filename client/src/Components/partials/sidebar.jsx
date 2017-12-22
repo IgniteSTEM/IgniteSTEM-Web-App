@@ -30,7 +30,7 @@ class Sidebar extends Component {
                         <Link className={this.currentPageClass('/about')} to={'/about'}>ABOUT</Link>
                     </li>
                     <li>
-                        <Link className={this.currentPageClass('/join')} to={'/join'}>JOIN</Link>
+                        <Link className={this.currentPageClass('/register')} to={'/register'}>JOIN</Link>
                     </li>
                     <li>
                         { loggedIn ?
