@@ -5,7 +5,7 @@ import { BrowserRouter as Switch } from 'react-router-dom';
 import PropTypes from 'prop-types'; // For prop validation
 
 // Components
-import Home from '../Components/home/index.jsx'; // Aka the Directory
+import Home from '../Containers/HomeContainer'; // Aka the Directory
 import About from '../Components/about/index.jsx'; // About page
 import Profile from '../Components/profile/index.jsx';
 import Login from '../Containers/LoginContainer';

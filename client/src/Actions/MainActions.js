@@ -98,3 +98,21 @@ export const userLogout = () => {
             });
     };
 }
+
+export const getUsers = () => {
+    return (dispatch) => {
+        return fetch('/api/users', {
+                method: 'GET',
+                credentials: 'same-origin', // Reset cookie
+            })
+            .then((response) => response.json()) // Parse response
+            .then((json) => {
+                if (json.success) {
+                    dispatch(notLoggedIn(json.users));
+                }
+                return json; // Return json as promise response
+            }).catch((error) => {
+                dispatch(actionError(error));
+            });
+    };
+}
