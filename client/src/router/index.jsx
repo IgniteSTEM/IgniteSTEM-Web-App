@@ -42,6 +42,7 @@ class MainRouter extends Component {
             loggedIn,
             currentUser,
             location, // Location object
+            userLogout, // Logout function
         } = this.props;
 
         // If user data not yet retrieved, display the loading screen
@@ -61,9 +62,12 @@ class MainRouter extends Component {
                         // User information
                         loggedIn={loggedIn}
                         user={currentUser}
+
+                        // Functions
+                        userLogout={userLogout}
                     />
                     <div className="main-content">
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" render={() => this.ifLoggedIn(<Home />)} />
                         <Route path="/about" component={About} />
                         <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
                         <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
@@ -87,6 +91,7 @@ MainRouter.propTypes = {
     fetchingUser: PropTypes.bool.isRequired, // Whether fetching the current user right now
     loggedIn: PropTypes.bool.isRequired, // Whether a user is logged in
     currentUser: PropTypes.object.isRequired, // Empty if not logged in
+    userLogout: PropTypes.func.isRequired, // Logout function
 };
 
 export default MainRouter;

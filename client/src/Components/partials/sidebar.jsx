@@ -19,6 +19,7 @@ class Sidebar extends Component {
         const {
             loggedIn,
             user,
+            userLogout, // Logout function
         } = this.props;
         return (
             <div className="sidebar">
@@ -34,9 +35,13 @@ class Sidebar extends Component {
                     </li>
                     <li>
                         { loggedIn ?
+                                <span>
                             <Link className={this.currentPageClass('/profile')} to={'/profile'}>WELCOME, {user.first_name}</Link>
+                            <br />
+                            <a onClick={() => userLogout()}>LOG OUT</a>
+                        </span>
                         :
-                                <Link className={this.currentPageClass('/login')} to={'/login'}>LOGIN</Link>
+                            <Link className={this.currentPageClass('/login')} to={'/login'}>LOGIN</Link>
                         }
                     </li>
                 </ul>
@@ -48,6 +53,7 @@ class Sidebar extends Component {
 Sidebar.propTypes = {
     loggedIn: PropTypes.bool.isRequired,
     user: PropTypes.object.isRequired,
+    userLogout: PropTypes.func.isRequired,
 
     // Redux/Router window location data
     location: PropTypes.shape({

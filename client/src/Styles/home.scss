@@ -1,2 +1,11 @@
 .home {
+    &-tile {
+        width: 30%;
+        display: inline-block;
+        padding: 12px;
+
+        img {
+            width: 100%;
+        }
+    }
 }

@@ -16,9 +16,9 @@ const mapStateToProps = (state) => ({
 
 // Map actions to props
 const mapDispatchToProps = (dispatch) => ({
-   //  userLogin: (username, password) => (
-   //      dispatch(userLogin(username, password))
-   // ),
+    getUsers: () => (
+        dispatch(getUsers())
+   ),
 });
 
 // Connects your component to the store using the previously defined functions

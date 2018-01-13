@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 import RouterComponent from '../router/index.jsx';
 
 // Import actions you'd like to make usable to a component
-// import { someAction } from '../Actions/MainActions';
+import { userLogout } from '../Actions/MainActions';
 
 // Map the redux states to props
 const mapStateToProps = (state) => ({
@@ -15,14 +15,14 @@ const mapStateToProps = (state) => ({
 });
 
 // Map actions to props
-// const mapDispatchToProps = (dispatch) => ({
-//     viewComponent: (input) => (
-//         dispatch(someAction(input))
-//    ),
-// });
+const mapDispatchToProps = (dispatch) => ({
+    userLogout: (input) => (
+        dispatch(userLogout())
+   ),
+});
 
 // Connects your component to the store using the previously defined functions
 export default withRouter(connect(
     mapStateToProps, // Add the states
-    // mapDispatchToProps // Add the actions
+    mapDispatchToProps // Add the actions
 )(RouterComponent)); // Connect them to the component

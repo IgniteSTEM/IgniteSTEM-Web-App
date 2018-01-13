@@ -24,6 +24,11 @@ const notLoggedIn = () => ({
     type: types.USER_NOT_LOGGED_IN,
 });
 
+const receivedUsers = (users) => ({
+    type: types.RECEIVED_USERS,
+    users,
+});
+
 export const fetchLoginStatus = () => {
     const url = '/api/users/current';
 
@@ -89,8 +94,12 @@ export const userLogout = () => {
             })
             .then((response) => response.json()) // Parse response
             .then((json) => {
+                console.log(json);
                 if (json.success) { // If successful, user has been logged out
                     dispatch(notLoggedIn(json.user));
+
+                    // Refresh page
+                    // window.location.href = '/';
                 }
                 return json; // Return json as promise response
             }).catch((error) => {
@@ -107,9 +116,8 @@ export const getUsers = () => {
             })
             .then((response) => response.json()) // Parse response
             .then((json) => {
-                if (json.success) {
-                    dispatch(notLoggedIn(json.users));
-                }
+                console.log(json);
+                dispatch(receivedUsers(json));
                 return json; // Return json as promise response
             }).catch((error) => {
                 dispatch(actionError(error));
