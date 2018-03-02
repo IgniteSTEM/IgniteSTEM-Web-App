@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'; // For prop validation
 
 // Components
 import Home from '../Containers/HomeContainer'; // Aka the Directory
+import Conferences from '../Components/conferences/index.jsx'; // Conferences screen
 import About from '../Components/about/index.jsx'; // About page
 import Profile from '../Components/profile/index.jsx';
 import Login from '../Containers/LoginContainer';
@@ -50,24 +51,25 @@ class MainRouter extends Component {
 
         return (
             <div>
+                <Sidebar
+                    // React Router information
+                    history={history}
+                    location={location}
+
+                    // User information
+                    loggedIn={loggedIn}
+                    user={currentUser}
+
+                    // Functions
+                    userLogout={userLogout}
+                />
                 <Header
                     location={location}
                 />
                 <div>
-                    <Sidebar
-                        // React Router information
-                        history={history}
-                        location={location}
-
-                        // User information
-                        loggedIn={loggedIn}
-                        user={currentUser}
-
-                        // Functions
-                        userLogout={userLogout}
-                    />
                     <div className="main-content">
                         <Route exact path="/" render={() => this.ifLoggedIn(<Home />)} />
+                        <Route path="/conferences" component={Conferences} />
                         <Route path="/about" component={About} />
                         <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
                         <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />

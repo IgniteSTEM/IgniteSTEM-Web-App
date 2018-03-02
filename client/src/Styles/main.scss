@@ -23,11 +23,11 @@ a {
 }
 
 // Main content area
-$sidebarWidth: 200px;
 .main {
     &-content {
         // Left side devoted to sidebar
-        width: calc(100% - #{$sidebarWidth});
+        width: 95%;
+        margin: auto;
         float: right;
 
         padding: 24px;

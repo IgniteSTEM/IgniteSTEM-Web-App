@@ -10,7 +10,7 @@ class Sidebar extends Component {
     currentPageClass(path) {
         const currentPath = this.props.location.pathname;
         if (path === currentPath) {
-            return 'sidebar-links-selected';
+            return 'nav-link-selected';
         }
         return ''; // No custom className
     }
@@ -22,29 +22,33 @@ class Sidebar extends Component {
             userLogout, // Logout function
         } = this.props;
         return (
-            <div className="sidebar">
-                <ul className="sidebar-links">
-                    <li>
-                        <Link className={this.currentPageClass('/')} to={'/'}>DIRECTORY</Link>
-                    </li>
-                    <li>
-                        <Link className={this.currentPageClass('/about')} to={'/about'}>ABOUT</Link>
-                    </li>
-                    <li>
-                        <Link className={this.currentPageClass('/register')} to={'/register'}>JOIN</Link>
-                    </li>
-                    <li>
-                        { loggedIn ?
-                                <span>
-                            <Link className={this.currentPageClass('/profile')} to={'/profile'}>WELCOME, {user.first_name}</Link>
-                            <br />
-                            <a onClick={() => userLogout()}>LOG OUT</a>
-                        </span>
-                        :
-                            <Link className={this.currentPageClass('/login')} to={'/login'}>LOGIN</Link>
-                        }
-                    </li>
-                </ul>
+            <div className="nav">
+                <div className="nav-link">
+                    <Link className={this.currentPageClass('/')} to={'/'}>Ignite Network</Link>
+                </div>
+                <div className="nav-link">
+                    <Link className={this.currentPageClass('/about')} to={'/conferences'}>Conferences</Link>
+                </div>
+                <div className="nav-link">
+                    <Link className={this.currentPageClass('/about')} to={'/about'}>HIAB</Link>
+                </div>
+                <div className="nav-link">
+                    <Link className={this.currentPageClass('/about')} to={'/about'}>Contact Us</Link>
+                </div>
+                <div className="nav-link">
+                    <Link className={this.currentPageClass('/register')} to={'/register'}>JOIN</Link>
+                </div>
+                <div className="nav-link">
+                    { loggedIn ?
+                            <span>
+                        <Link className={this.currentPageClass('/profile')} to={'/profile'}>WELCOME, {user.first_name}</Link>
+                        <br />
+                        <a onClick={() => userLogout()}>LOG OUT</a>
+                    </span>
+                    :
+                        <Link className={this.currentPageClass('/login')} to={'/login'}>LOGIN</Link>
+                    }
+                </div>
             </div>
         );
     }
