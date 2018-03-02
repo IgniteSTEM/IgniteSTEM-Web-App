@@ -26,6 +26,7 @@ class MainRouter extends Component {
     ifLoggedIn(component) {
         if (this.props.loggedIn) return component;
 
+        this.props.loginSetReferrer(this.props.location.pathname);
         this.props.history.push('/login');
         return <Login />;
     }
@@ -96,6 +97,7 @@ MainRouter.propTypes = {
     loggedIn: PropTypes.bool.isRequired, // Whether a user is logged in
     currentUser: PropTypes.object.isRequired, // Empty if not logged in
     userLogout: PropTypes.func.isRequired, // Logout function
+    loginSetReferrer: PropTypes.func.isRequired, // Settign the login referrer
 };
 
 export default MainRouter;

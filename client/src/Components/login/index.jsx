@@ -32,8 +32,9 @@ class LoginScreen extends Component {
             this.props.userLogin(username, password) // Send login request
                 .then((response) => {
                     if (response.success) {
-                        console.log(this.props.history);
-                        this.props.history.push('/'); // Go to the homepage if login was successful
+                        // Set the new location after the login is a success
+                        const newLocation = (this.props.referrer != null) ? this.props.referrer : '/';
+                        this.props.history.push(newLocation); // Go to new location
                     }
                 })
                 .catch((error) => {
@@ -82,6 +83,7 @@ LoginScreen.propTypes = {
     history: PropTypes.object.isRequired,
     userLogin: PropTypes.func.isRequired,
     error: PropTypes.string.isRequired,
+    referrer: PropTypes.string.isRequired,
 };
 
 export default LoginScreen;

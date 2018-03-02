@@ -57,6 +57,14 @@ export const fetchLoginStatus = () => {
     };
 };
 
+export const loginSetReferrer = (referrer) => {
+    console.log(`Going to login screen...Setting 'referrer' to: ${referrer}`);
+    return {
+        type: types.USER_LOGIN_SET_REFERRER,
+        referrer,
+    }
+}
+
 export const userLogin = (username, password) => {
     return (dispatch) => {
         dispatch(loginRequest());

@@ -10,13 +10,14 @@ import { userLogin } from '../Actions/MainActions';
 // Map the redux states to props
 const mapStateToProps = (state) => ({
     error: state.login.error, // Login errors
+    referrer: state.login.referrer, // The referring page
 });
 
 // Map actions to props
 const mapDispatchToProps = (dispatch) => ({
     userLogin: (username, password) => (
         dispatch(userLogin(username, password))
-   ),
+    ),
 });
 
 // Connects your component to the store using the previously defined functions

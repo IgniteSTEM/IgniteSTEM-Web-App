@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 import RouterComponent from '../router/index.jsx';
 
 // Import actions you'd like to make usable to a component
-import { userLogout } from '../Actions/MainActions';
+import { userLogout, loginSetReferrer } from '../Actions/MainActions';
 
 // Map the redux states to props
 const mapStateToProps = (state) => ({
@@ -18,7 +18,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     userLogout: (input) => (
         dispatch(userLogout())
-   ),
+    ),
+
+    // Set the referrer to the login page
+    loginSetReferrer: (referrer) => (
+        dispatch(loginSetReferrer(referrer))
+    ),
 });
 
 // Connects your component to the store using the previously defined functions

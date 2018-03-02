@@ -2,6 +2,7 @@ import * as types from '../Constants/MainActionTypes';
 
 const initialState = {
     error: '', // Login errors
+    referrer: '/', // Which page referred the user to login
 };
 
 const LoginReducer = (state = initialState, action) => {
@@ -19,6 +20,11 @@ const LoginReducer = (state = initialState, action) => {
                 ...state,
                 loggedIn: false,
                 error: action.error,
+            };
+        case types.USER_LOGIN_SET_REFERRER:
+            return {
+                ...state,
+                referrer: action.referrer,
             };
        default: // Default, no state change
            return state;
