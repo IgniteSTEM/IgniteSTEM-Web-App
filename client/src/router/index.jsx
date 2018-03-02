@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'; // For prop validation
 import Home from '../Containers/HomeContainer'; // Aka the Directory
 import Conferences from '../Components/conferences/index.jsx'; // Conferences screen
 import About from '../Components/about/index.jsx'; // About page
+import Contact from '../Components/contact/index.jsx'; // Contact page
 import Profile from '../Components/profile/index.jsx';
 import Login from '../Containers/LoginContainer';
 import Register from '../Containers/RegisterContainer';
@@ -21,7 +22,7 @@ import FullscreenLoading from '../Components/loading/fullscreen-loading.jsx';
 
 class MainRouter extends Component {
 
-    // Only matters if the user is logged in
+    // Only matters if the user ~is~ logged in
     ifLoggedIn(component) {
         if (this.props.loggedIn) return component;
 
@@ -29,7 +30,7 @@ class MainRouter extends Component {
         return <Login />;
     }
 
-    // Only show screen if not logged in
+    // Only show screen if ~not~ logged in
     ifLoggedOut(component) {
         if (!this.props.loggedIn) return component;
 
@@ -68,9 +69,10 @@ class MainRouter extends Component {
                 />
                 <div>
                     <div className="main-content">
-                        <Route exact path="/" render={() => this.ifLoggedIn(<Home />)} />
+                        <Route exact path="/" component={About} />
+                        <Route path="/community" render={() => this.ifLoggedIn(<Home />)} />
                         <Route path="/conferences" component={Conferences} />
-                        <Route path="/about" component={About} />
+                        <Route path="/contact" component={Contact} />
                         <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
                         <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
                         <Route path="/register" render={() => this.ifLoggedOut(<Register />)} />

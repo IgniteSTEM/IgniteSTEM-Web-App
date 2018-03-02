@@ -32,6 +32,7 @@ class LoginScreen extends Component {
             this.props.userLogin(username, password) // Send login request
                 .then((response) => {
                     if (response.success) {
+                        console.log(this.props.history);
                         this.props.history.push('/'); // Go to the homepage if login was successful
                     }
                 })

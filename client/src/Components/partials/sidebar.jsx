@@ -24,16 +24,19 @@ class Sidebar extends Component {
         return (
             <div className="nav">
                 <div className="nav-link">
-                    <Link className={this.currentPageClass('/')} to={'/'}>Ignite Network</Link>
+                    <Link className={this.currentPageClass('/')} to={'/'}>Home</Link>
                 </div>
                 <div className="nav-link">
-                    <Link className={this.currentPageClass('/about')} to={'/conferences'}>Conferences</Link>
+                    <Link className={this.currentPageClass('/community')} to={'/community'}>Community</Link>
                 </div>
                 <div className="nav-link">
-                    <Link className={this.currentPageClass('/about')} to={'/about'}>HIAB</Link>
+                    <Link className={this.currentPageClass('/conferences')} to={'/conferences'}>Conferences</Link>
                 </div>
                 <div className="nav-link">
-                    <Link className={this.currentPageClass('/about')} to={'/about'}>Contact Us</Link>
+                    <Link className={this.currentPageClass('/hiab')} to={'/hiab'}>HIAB</Link>
+                </div>
+                <div className="nav-link">
+                    <Link className={this.currentPageClass('/contact')} to={'/contact'}>Contact Us</Link>
                 </div>
                 <div className="nav-link">
                     <Link className={this.currentPageClass('/register')} to={'/register'}>JOIN</Link>
