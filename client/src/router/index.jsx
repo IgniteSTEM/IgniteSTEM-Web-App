@@ -5,7 +5,7 @@ import { BrowserRouter as Switch } from 'react-router-dom';
 import PropTypes from 'prop-types'; // For prop validation
 
 // Components
-import Home from '../Containers/HomeContainer'; // Aka the Directory
+import Network from '../Containers/NetworkContainer'; // Aka the Directory
 import Conferences from '../Components/conferences/index.jsx'; // Conferences screen
 import About from '../Components/about/index.jsx'; // About page
 import Contact from '../Components/contact/index.jsx'; // Contact page
@@ -68,16 +68,14 @@ class MainRouter extends Component {
                 <Header
                     location={location}
                 />
-                <div>
-                    <div className="main-content">
-                        <Route exact path="/" component={About} />
-                        <Route path="/community" render={() => this.ifLoggedIn(<Home />)} />
-                        <Route path="/conferences" component={Conferences} />
-                        <Route path="/contact" component={Contact} />
-                        <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
-                        <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
-                        <Route path="/register" render={() => this.ifLoggedOut(<Register />)} />
-                    </div>
+                <div className="main-content">
+                    <Route exact path="/" component={About} />
+                    <Route path="/community" render={() => this.ifLoggedIn(<Network />)} />
+                    <Route path="/conferences" component={Conferences} />
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/profile" render={() => this.ifLoggedIn(<Profile />)} />
+                    <Route path="/login" render={() => this.ifLoggedOut(<Login />)} />
+                    <Route path="/register" render={() => this.ifLoggedOut(<Register />)} />
                 </div>
             </div>
         );

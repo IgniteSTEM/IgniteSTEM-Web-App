@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 
 // Get the component
-import HomeComponent from '../Components/home/index.jsx';
+import NetworkComponent from '../Components/network/index.jsx';
 
 // Import actions you'd like to make usable to a component
 import { getUsers } from '../Actions/MainActions';
@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default withRouter(connect(
     mapStateToProps, // Add the states
     mapDispatchToProps // Add the actions
-)(HomeComponent)); // Connect them to the component
+)(NetworkComponent)); // Connect them to the component

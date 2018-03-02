@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // Import styles
-import '../../Styles/home.scss';
+import '../../Styles/network.scss';
 
 class Home extends Component {
     constructor(props) {
