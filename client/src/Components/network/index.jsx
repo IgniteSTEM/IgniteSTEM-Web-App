@@ -18,7 +18,7 @@ class Home extends Component {
     render() {
         const lessonPlanNodes = lessonPlanData.map((lessonPlan) => <LessonPlanTile lessonPlan={lessonPlan} />);
         return (
-            <div>
+            <div class="lesson-plans">
                 {lessonPlanNodes}
             </div>
         )
