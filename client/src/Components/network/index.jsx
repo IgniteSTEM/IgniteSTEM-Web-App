@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import LessonPlanTile from './tile.jsx'
-
 // Import styles
 import '../../Styles/network.scss';
 
-// Import lesson plans (TODO: Move to server)
-import lessonPlanData from './lessonPlans.js';
+import LessonPlans from './LessonPlans.jsx';
 
 class Home extends Component {
     constructor(props) {
@@ -16,10 +13,16 @@ class Home extends Component {
     }
 
     render() {
-        const lessonPlanNodes = lessonPlanData.map((lessonPlan) => <LessonPlanTile lessonPlan={lessonPlan} />);
         return (
-            <div class="lesson-plans">
-                {lessonPlanNodes}
+            <div>
+                <div className="network-sidebar">
+                    <div className="network-sidebar-content">
+                        Search
+                    </div>
+                </div>
+                <div className="lesson-plans">
+                    <LessonPlans />
+                </div>
             </div>
         )
     }
