@@ -3,6 +3,7 @@ import React from 'react';
 import './../../Styles/about.scss'; // Import styling
 
 const aboutScreen = () => {
+    // Aydan this is you
     return (
         <div className="about">
             <p>
