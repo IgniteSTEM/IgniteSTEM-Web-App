@@ -8,7 +8,6 @@ const path = require('path');
 
 let __dirname = process.cwd();
 
-console.log(__dirname)
 const app = express(); // Setup express app
 
 // Allow cross origin requests with authorization (for API purposes)

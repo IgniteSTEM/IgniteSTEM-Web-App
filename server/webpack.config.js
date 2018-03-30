@@ -5,9 +5,6 @@ let entries = {
     'dist/index': ['babel-polyfill', './server/src/index.js'],
 };
 
-console.log("Test")
-console.log(__dirname)
-
 module.exports = {
     devtool: 'source-map',
     entry: entries,
