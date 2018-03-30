@@ -5,6 +5,9 @@ let entries = {
     'dist/index': ['babel-polyfill', './server/src/index.js'],
 };
 
+console.log("Test")
+console.log(__dirname)
+
 module.exports = {
     devtool: 'source-map',
     entry: entries,
@@ -47,7 +50,7 @@ module.exports = {
         ],
         extensions: [".js"]
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'inline-source-map',
     stats: {
         colors: true, // Include colors in output
         errorDetails: true,

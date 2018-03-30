@@ -6,8 +6,9 @@ const bodyParser = require('body-parser');
 const sessionAuth = require('./config/session');
 const path = require('path');
 
-const __dirname = process.env.PWD; // Could break on prod
+let __dirname = process.cwd();
 
+console.log(__dirname)
 const app = express(); // Setup express app
 
 // Allow cross origin requests with authorization (for API purposes)

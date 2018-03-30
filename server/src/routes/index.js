@@ -25,18 +25,18 @@ export default (app) => {
 
     // Serve the static client index.js build file
     app.get('/scripts/index.js', (req, res) => {
-        const __dirname = process.env.PWD;
+        const __dirname = process.cwd();
         res.sendFile('index.js', { root: path.join(__dirname, './client/dist') });
     });
 
     app.get('/favicon.png', (req, res) => {
-        const __dirname = process.env.PWD;
+        const __dirname = process.cwd();
         res.sendFile('favicon.png', { root: path.join(__dirname, './client/dist') });
     });
 
     // Client app entry index.html file - react router
     app.get('*', (req, res) => {
-        const __dirname = process.env.PWD;
+        const __dirname = process.cwd();
         res.sendFile('index.html', { root: path.join(__dirname, './client/dist') }); // Render client
     });
 };

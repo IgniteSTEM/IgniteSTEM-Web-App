@@ -6,7 +6,7 @@ import Sequelize from 'sequelize';
 const configFile  = require('../config/config.json');
 
 var env             = process.env.NODE_ENV || 'development'; // Determine if using development
-const __dirname     = process.env.PWD; // Could break on prod
+const __dirname     = process.cwd(); // Could break on prod
 const currentDir = path.join(__dirname, './server/src/models');
 
 // Regular `module.filename` is undefined in local dev
