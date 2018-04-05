@@ -12,6 +12,25 @@ export const list = (req, res) => {
         .catch((error: Error) => res.status(400).send(error)); // Error
 };
 
+export const checkUsername = (req, res) => {
+    const {
+        username,
+    } = req.body; // Get username
+    return User.
+        findAll({
+            where: {
+                username, // See if user exists with that username
+            }
+        })
+        .then((users) => {
+            usernameAvailable = (users.length == 0); // Username available if none
+            res.status(200).send({
+                available: usernameAvailable,
+            });
+        })
+        .catch((error: Error) => res.status(400).send(error)); // Error
+}
+
 export const createUser = (req, res) => {
     console.log('Created user');
     const {
