@@ -6,156 +6,149 @@ const schedule = (req, res) => {
     res.status(200).send({
         "data": [
             {
-                "Session": "Registration + Casual Breakfast",
-                "Speaker": "",
-                "Capacity": "",
-                "Location": "",
-                "Notes": ""
+                time: "9:00 am - 9:45 am",
+                session: "Registration + Casual Breakfast",
+                speaker: "",
+                capacity: "",
+                location: "",
+                notes: ""
             },
             {
-                "Time": "9:30 - 9:45",
-                "Session": "Opening Remarks",
-                "Speaker": "IgniteSTEM Directors",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
+                time: "9:45 am - 10:00 am",
+                session: "Opening Remarks",
+                speaker: "IgniteSTEM Directors",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: "Conference welcome and opening remarks from IgniteSTEM Direcotrs"
             },
             {
-                "Time": "10:00 - 10:45",
-                "Session": "Keynote",
-                "Speaker": "Pat Yongpradit, Chief Academic Officer at Code.org",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
+                time: "10:00 am - 10:45 am",
+                session: "Keynote",
+                speaker: "Pat Yongpradit, Chief Academic Officer at Code.org",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: "Keynote by Pat Yongpradit, Chief Academic Officer at Code.org"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "",
-                "Capacity": "",
-                "Location": "Apollo",
-                "Notes": "max 25 people"
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "Don Buckley (Design Thinking)",
+                capacity: 30,
+                location: "Baker Field",
+                notes: "Design Thinking workshop led by Don Buckley"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Don Buckley (Design Thinking)",
-                "Capacity": 20,
-                "Location": "Apollo",
-                "Notes": ""
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "Godwyn Morris (Makerspace)",
+                capacity: 50,
+                location: "GWB 4A220A",
+                notes: "Makerspace session led by Godwyn Morris"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Godwyn Morris (Makerspace)",
-                "Capacity": 30,
-                "Location": "Apollo",
-                "Notes": ""
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "IgniteSTEM Design Thinking",
+                capacity: 20,
+                location: "Empire State",
+                notes: "Design Thinking workshop led by IgniteSTEMers"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "IgniteSTEM Design Thinking",
-                "Capacity": 20,
-                "Location": "Apollo",
-                "Notes": "Rafe's DT workshop"
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "Workshops for Teachers in Tech",
+                capacity: 10,
+                location: "Philharmonic",
+                notes: "Technology in Teaching led by Aankit Patel"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Workshops for Teachers in Tech",
-                "Capacity": 20,
-                "Location": "Apollo",
-                "Notes": "let by Aankit Patel"
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "Council for Opportunity in Education",
+                capacity: 10,
+                location: "Battery Park",
+                notes: "Developing STEM Learners: Thinking Outside of the Classroom"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Paul Scully (Building One America)",
-                "Capacity": 20,
-                "Location": "Baker Field",
-                "Notes": ""
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "IgniteSTEM Team Hackathon",
+                capacity: 20,
+                location: "Apollo",
+                notes: "Hack-a-thon workshop (working in small groups)"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Council for Academic Opportunity",
-                "Capacity": 20,
-                "Location": "Apollo",
-                "Notes": "D + I"
+                time: "11:00 am - 12:30 pm",
+                session: "Lightning Talks and Workshops",
+                speaker: "Chris Harris + Jennifer Kressler Duda",
+                capacity: 10,
+                location: "Riverside Park",
+                notes: "Coding and Robots in the Special Needs Classroom"
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Major League Hacking",
-                "Capacity": 20,
-                "Location": "Apollo",
-                "Notes": ""
+                time: "12:30 pm - 1:15 pm",
+                session: "Lunch",
+                speaker: "",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: ""
             },
             {
-                "Time": "11:00 - 12:30",
-                "Session": "Lightning Talks and Workshops",
-                "Speaker": "Chris Harris",
-                "Capacity": 20,
-                "Location": "Apollo",
-                "Notes": ""
+                time: "1:30 pm - 2:15 pm",
+                session: "EdTech Panel",
+                speaker: "Labster",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: "Using edTech in the classroom: Q/A with three different areas"
             },
             {
-                "Time": "12:30 - 1:15",
-                "Session": "Lunch",
-                "Speaker": "",
-                "Capacity": "",
-                "Location": "Space D",
-                "Notes": ""
+                time: "1:30 pm - 2:15 pm",
+                session: "EdTech Panel",
+                speaker: "Jack DeFuria (Bolt Learning)",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: ""
             },
             {
-                "Time": "1:30 - 2:15",
-                "Session": "EdTech Panel",
-                "Speaker": "Labster",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
+                time: "1:30 pm - 2:15 pm",
+                session: "EdTech Panel",
+                speaker: "Chris Harris + Jennifer Kressler Duda",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: ""
             },
             {
-                "Time": "1:30 - 2:15",
-                "Session": "EdTech Panel",
-                "Speaker": "Jack DeFuria (Bolt Learning)",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
+                time: "2:15 pm - 3:00 pm",
+                session: "Keynote",
+                speaker: "Jonathan Rochelle, Director of Product Management at Google Education",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: "Keynote and Q/A by Jonathan Rochelle, Director of Product Management at Google Education"
             },
             {
-                "Time": "1:30 - 2:15",
-                "Session": "EdTech Panel",
-                "Speaker": "Piper",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
+                time: "3:15 pm - 4:00 pm",
+                session: "Unconference Session",
+                speaker: "",
+                capacity: "",
+                location: "(tbd- info will be given to attendees at a later date)",
+                notes: "Attendee-driven small group unconference and curriculum design sessions"
             },
             {
-                "Time": "2:15 - 3:00",
-                "Session": "Keynote",
-                "Speaker": "Jonathan Rochelle, Director of Product Management at Google Education",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
+                time: "4:15 pm - 4:30 pm",
+                session: "Closing Remarks",
+                speaker: "IgniteSTEM Directors",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: "Closing Remarks from IgniteSTEM"
             },
             {
-                "Time": "3:15 - 4:00",
-                "Session": "Unconference Session",
-                "Speaker": "",
-                "Capacity": "",
-                "Location": "Apollo\r\nEmpire State\r\nBattery Park\r\nBethesda Fountain",
-                "Notes": ""
-            },
-            {
-                "Time": "4:15 - 4:30",
-                "Session": "Closing Remarks",
-                "Speaker": "IgniteSTEM Directors",
-                "Capacity": "",
-                "Location": "GWB 4A220A",
-                "Notes": ""
-            },
+                time: "4:30 pm - 6:00 pm",
+                session: "IgniteSTEM Reception",
+                speaker: "All Conference",
+                capacity: "",
+                location: "GWB 4A220A",
+                notes: "Hack-in-a-box distribution and reception featuring drinks and snacks"
+            }
         ]
     });
 };
