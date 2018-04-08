@@ -16,6 +16,13 @@ export const checkUsername = (req, res) => {
     const {
         username,
     } = req.body; // Get username
+
+    // No username provided
+    if (username == null) {
+        res.status(400).send(error);
+        return;
+    }
+
     return User.
         findAll({
             where: {
@@ -41,6 +48,9 @@ export const createUser = (req, res) => {
         last_name,
         organization,
     } = req.body; // Information from the request body JSON data
+
+    // Start with no errors
+    let errors = {}
 
     return User
         .create({
