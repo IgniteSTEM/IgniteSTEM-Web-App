@@ -10,6 +10,7 @@ Hosting: Heroku, HerokuPG
 
 # To Do
 * Design UI/UX
+* Animate router transitions using [this](https://github.com/reactjs/react-transition-group)
 
 # Notes
 Must specify `--app` when performing Heroku CLI commands if you have multiple Heroku apps on your machine.
